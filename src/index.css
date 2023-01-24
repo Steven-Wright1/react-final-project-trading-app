@@ -1,0 +1,18 @@
+:root {
+    --lavendar: #f8a4d8;
+    --cornflower-blue: #6363ff;
+    --grey: #5a6170;
+    --gull-gray: #9da6b8;
+    --alto: #dadfea;
+    --snow-white: #FFFFFF;
+}
+
+
+*{
+    margin: 0; 
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--grey);
+}

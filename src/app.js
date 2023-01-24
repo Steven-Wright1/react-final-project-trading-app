@@ -1,5 +1,14 @@
+import { NavigationBar } from "./components/Navbar";
+import { AppRoutes } from "./AppRoutes";
+import { BrowserRouter } from "react-router-dom";
+
 export const App = () => {
     return(
-        <h1>Hello World!</h1>
+
+        <BrowserRouter>
+            <NavigationBar />
+            <AppRoutes />
+        </BrowserRouter>
+
     );
 }
