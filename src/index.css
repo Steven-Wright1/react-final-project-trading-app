@@ -14,5 +14,18 @@
 }
 
 body{
-    background-color: var(--grey);
+    background-color: var(--alto);
 }
+
+.Navbar{
+    background-color: var(--cornflower-blue);
+}
+
+.nav-link{
+    color: var(--alto);
+}
+
+.nav-link:focus, .nav-link:hover {
+    color: var(--lavendar);
+  }
+  
