@@ -5,6 +5,7 @@
     --gull-gray: #9da6b8;
     --alto: #dadfea;
     --snow-white: #FFFFFF;
+    --background-blue: #065ebd;
 }
 
 
@@ -29,3 +30,11 @@ body{
     color: var(--lavendar);
   }
   
+.trading-image{
+    width: 60%;
+}
+
+.header-container{
+    background-color: var(--background-blue);
+    padding: 30px 0px 0px;
+};
