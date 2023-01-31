@@ -1,5 +1,14 @@
+import { Error } from "./Error";
+import { SearchForm } from "./SearchForm";
+import { StockFaves } from "./StockFaves";
+import { Stack } from "react-bootstrap";
+
 export const Favourites = () => {
     return(
-        <div>Favourites_Search_bar</div>
+        <Stack gap={2}>
+            <SearchForm />
+            <Error />
+            <StockFaves />
+        </Stack>
     );
 }

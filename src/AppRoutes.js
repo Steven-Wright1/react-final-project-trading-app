@@ -9,7 +9,7 @@ import { Contact } from "./pages/Contact";
 export const AppRoutes = () => {
     return(
         <Routes>
-            <Route path="/home" element={<Watchlist />} />
+            <Route path="/" element={<Watchlist />} />
             <Route path="/price-points" element={<PricePoints />} />
             <Route path="/market-news" element={<MarketNews />} />
             <Route path="/sentiment-analysis" element={<SentimentAnalysis />} />

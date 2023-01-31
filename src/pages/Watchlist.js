@@ -5,10 +5,10 @@ import { Favourites } from "../components/Favourites";
 export const Watchlist = () => {
     return (
         <div>
-             <Banner /> 
-        <Container>
-            <Favourites />
-        </Container>
+            <Banner /> 
+            <Container>
+                <Favourites />
+            </Container>
         </div>
     );
 }
