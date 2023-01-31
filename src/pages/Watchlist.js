@@ -4,22 +4,24 @@ import { Banner } from "../components/Banner";
 import { Error } from "../components/Error";
 import { SearchForm } from "../components/SearchForm";
 import { StockFaves } from "../components/StockFaves";
-
+import { getFromLocalStorage } from "../utils/getFromLocalStorage";
 
 export const Watchlist = () => {
+  const [favourites, setFavourites] = useState(
+    getFromLocalStorage("favourites", [])
+  );
 
-    const faves =  JSON.parse(localStorage.getItem("favourites")); 
+  console.log(favourites);
 
-    console.log(faves)
-
-    return (
-        <div>
-            <Banner /> 
-            <Container>
-                <SearchForm />
-                <Error /> 
-                <StockFaves />
-            </Container>
-        </div>
-    );
-}
+  return (
+    <div>
+      <Banner />
+      <Container>
+        <SearchForm setFavourites={setFavourites} />
+        {JSON.stringify(favourites, null, 2)}
+        <Error />
+        <StockFaves />
+      </Container>
+    </div>
+  );
+};
