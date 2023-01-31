@@ -48,17 +48,17 @@ export const SearchForm = () => {
     /*Function to handle the change of the ticker box*/
     const handleOnChange = (event) => {
         setTicker(event.target.value);
-        console.log(ticker)
       };
 
 
     const handleOnClick = (event) => {
         const new_arr = [...favourites,ticker];
+
+        localStorage.setItem("favourites",JSON.stringify(new_arr))
         setFavourites(new_arr)
     }
 
 
-    console.log(favourites)
     return(
 
         /*Box properties to center search form*/

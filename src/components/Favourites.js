@@ -1,4 +1,4 @@
-import { Error } from "./Error";
+/*import { Error } from "./Error";
 import { SearchForm } from "./SearchForm";
 import { StockFaves } from "./StockFaves";
 import { Stack } from "react-bootstrap";
@@ -11,4 +11,4 @@ export const Favourites = () => {
             <StockFaves />
         </Stack>
     );
-}
+}*/
