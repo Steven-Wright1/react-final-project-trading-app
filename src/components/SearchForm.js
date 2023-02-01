@@ -49,13 +49,9 @@ export const SearchForm = ({ setFavourites }) => {
 
   const handleOnSubmit = (event) => {
     event.preventDefault();
-
     const favouritesFromLS = getFromLocalStorage("favourites", []);
-
     favouritesFromLS.push(ticker);
-
     localStorage.setItem("favourites", JSON.stringify(favouritesFromLS));
-
     setFavourites(favouritesFromLS);
   };
 

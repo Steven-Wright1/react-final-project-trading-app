@@ -1,5 +1,8 @@
-export const Error = () =>{
+import Alert from '@mui/material/Alert';
+
+export const Error = ({errorMessage}) =>{
     return (
-        <div>Error!</div>
-    );
-}
+    <Alert variant="outlined" severity="error">
+    {errorMessage}
+    </Alert>
+)};
