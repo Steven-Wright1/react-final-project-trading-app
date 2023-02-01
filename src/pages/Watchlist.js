@@ -1,48 +1,39 @@
-import { React, useState } from "react";
+import { React, useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import { Banner } from "../components/Banner";
 import { Error } from "../components/Error";
 import { SearchForm } from "../components/SearchForm";
 import { StockFaves } from "../components/StockFaves";
 import { getFromLocalStorage } from "../utils/getFromLocalStorage";
-import { Stack } from "@mui/material";
+import Box from "@mui/material/Box";
 
 export const Watchlist = () => {
+  const [errorMessage, setErrorMessage] = useState("");
   const [favourites, setFavourites] = useState(
     getFromLocalStorage("favourites", [])
   );
 
-   const[errorMessage, setErrorMessage] = useState("");
-
-   const error1= "you have no faves"
+  useEffect(() => {
+    if (favourites.length === 0) {
+      setErrorMessage("You have no faves");
+    } else {
+      setErrorMessage("");
+    }
+  }, [favourites]);
 
   return (
-    <div>
+    <Box>
       <Banner />
       <Container>
-        <SearchForm setFavourites={setFavourites} />
-    
-    
+        <SearchForm
+          setFavourites={setFavourites}
+          setErrorMessage={setErrorMessage}
+        />
 
+        {errorMessage && <Error errorMessage={errorMessage} />}
 
-      {
-      favourites.length === 2 ? (
-        setErrorMessage(error1)) : 
-        ( <Error />)
-        }
-
-
-
-        <Error errorMessage={errorMessage}/>
-
-
-
-        {
-          favourites.map((favourite)=>{
-            return  <StockFaves favourite={favourite}/>
-          })
-        }
+        {favourites.length !== 0 && <StockFaves favourites={favourites} />}
       </Container>
-    </div>
+    </Box>
   );
 };
