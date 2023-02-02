@@ -1,5 +1,5 @@
 import { React, useEffect, useState } from "react";
-import { Container } from "react-bootstrap";
+import Container from "@mui/material/Container";
 import { Banner } from "../components/Banner";
 import { Error } from "../components/Error";
 import { SearchForm } from "../components/SearchForm";
@@ -32,7 +32,9 @@ export const Watchlist = () => {
 
         {errorMessage && <Error errorMessage={errorMessage} />}
 
-        {favourites.length !== 0 && <StockFaves favourites={favourites} />}
+        {favourites.length !== 0 && (
+          <StockFaves favourites={favourites} setFavourites={setFavourites} />
+        )}
       </Container>
     </Box>
   );
