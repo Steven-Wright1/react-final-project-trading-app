@@ -10,20 +10,21 @@ export const PricePoints = () => {
   );
 
   const stocks = [];
+  const api_key = process.env.REACT_APP_API_KEY;
 
   useEffect(() => {
-    const api_key = process.env.REACT_APP_API_KEY;
-
     favourites.map((favourite) => {
-      const data = axios.get(
-        `https://finnhub.io/api/v1/quote?symbol=${favourite}&token=${api_key}`
-      );
-
-      stocks.push(data);
-
+      axios
+        .get(
+          `https://finnhub.io/api/v1/quote?symbol=${favourite}&token=${api_key}`
+        )
+        .then((response) => {
+          const data = response.data;
+          stocks.push(data);
+          return stocks;
+        });
       return stocks;
     });
-
     console.log(stocks);
   });
 
