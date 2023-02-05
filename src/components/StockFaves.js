@@ -2,6 +2,8 @@ import React from "react";
 import Box from "@mui/material/Box";
 import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
 import { getFromLocalStorage } from "../utils/getFromLocalStorage";
+import TrendingUpIcon from "@mui/icons-material/TrendingUp";
+/*import LozArrow from "../Images/loz.PNG";*/
 
 export const StockFaves = ({ favourites, setFavourites }) => {
   const handleRemove = (event) => {
@@ -20,20 +22,23 @@ export const StockFaves = ({ favourites, setFavourites }) => {
           display: "flex",
           m: 1,
           p: 1,
-          colour: "#ffffff",
-          borderColor: "#f8a4d8",
+          bgcolor: "#ffffff",
           borderRadius: 5,
           fontSize: "2rem",
-          fontWeight: "700",
-          justifyContent: "space-between",
+          justifyContent: "space-around",
         }}
       >
-        <div>{favourite}</div>
-        <RemoveCircleOutlineIcon
-          sx={{ fontSize: 60, color: "red" }}
-          name={favourite}
-          onClick={() => handleRemove(favourite)}
-        />
+        <Box sx={{ display: "flex", alignItems: "center" }}>
+          <TrendingUpIcon sx={{ fontSize: 30 }} />
+        </Box>
+        <Box sx={{ fontWeight: "bold" }}>{favourite}</Box>
+        <Box sx={{ display: "flex", alignItems: "center" }}>
+          <RemoveCircleOutlineIcon
+            sx={{ fontSize: 30, color: "red" }}
+            name={favourite}
+            onClick={() => handleRemove(favourite)}
+          />
+        </Box>
       </Box>
     );
   });

@@ -40,6 +40,7 @@ export const SearchForm = ({ setFavourites, setErrorMessage }) => {
   return (
     <Box sx={{ my: 3 }} component="form" onSubmit={formik.handleSubmit}>
       <TextField
+        sx={{ bgcolor: "#ffffff" }}
         name="ticker"
         id="ticker"
         placeholder="Add company code"

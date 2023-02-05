@@ -1,40 +1,47 @@
 :root {
-    --lavendar: #f8a4d8;
-    --cornflower-blue: #6363ff;
-    --grey: #5a6170;
-    --gull-gray: #9da6b8;
-    --alto: #dadfea;
-    --snow-white: #FFFFFF;
-    --background-blue: #065ebd;
+  --lavendar: #f8a4d8;
+  --cornflower-blue: #6363ff;
+  --lozlington: #6565ffe1;
+  --grey: #5a6170;
+  --gull-gray: #9da6b8;
+  --alto: #dadfea;
+  --snow-white: #ffffff;
+  --background-blue: #065ebd;
+  --shnookums: #43a3af;
+  --space-mountain: #131424;
 }
 
-
-*{
-    margin: 0; 
-    box-sizing: border-box;
+* {
+  margin: 0;
+  box-sizing: border-box;
 }
 
-body{
-    background-color: var(--alto);
+body {
+  background-color: var(--space-mountain);
 }
 
-.Navbar{
-    background-color: var(--cornflower-blue);
+.Navbar {
+  background-color: var(--lozlington);
 }
 
-.nav-link{
-    color: var(--alto);
+.brand_img {
+  width: 55%;
 }
 
-.nav-link:focus, .nav-link:hover {
-    color: var(--lavendar);
-  }
-  
-.trading-image{
-    width: 60%;
+.nav-link {
+  color: var(--alto);
 }
 
-.header-container{
-    background-color: var(--background-blue);
-    padding: 30px 0px 0px;
-};
+.nav-link:focus,
+.nav-link:hover {
+  color: var(--lavendar);
+}
+
+.trading-image {
+  width: 60%;
+}
+
+.header-container {
+  background-color: var(--shnookums);
+  padding: 30px 0px 0px;
+}
