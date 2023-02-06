@@ -11,29 +11,29 @@ export const PricePoints = () => {
   const api_key = process.env.REACT_APP_API_KEY;
 
   useEffect(() => {
-    favourites.map((favourite) => {
-      axios
-        .get(
+    const fetchData = async () => {
+      const promises = favourites.map((favourite) => {
+        return axios.get(
           `https://finnhub.io/api/v1/quote?symbol=${favourite}&token=${api_key}`
-        )
-        .then((response) => {
-          const data = response.data;
-          data.name = { favourite };
-          stocks.push(data);
-        });
-      return setStocks(stocks);
-    });
-    console.log(stocks);
-  });
+        );
+      });
+
+      const data = await Promise.all(promises);
+
+      setStocks(data);
+    };
+
+    fetchData();
+  }, []);
+
+  console.log(stocks);
 
   return (
     <Container>
       <div>PricePoints</div>
-      <StockPrices
-        stocks={stocks}
-        setStocks={setStocks}
-        favourites={favourites}
-      />
+      {stocks.length !== 0 && (
+        <StockPrices stocks={stocks} favourites={favourites} />
+      )}
     </Container>
   );
 };

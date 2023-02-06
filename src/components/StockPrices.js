@@ -1,8 +1,8 @@
 import Box from "@mui/material/Box";
 import { React } from "react";
 
-export const StockPrices = ({ stocks, favourites, setStocks }) => {
-  return stocks.map((stock) => {
+export const StockPrices = ({ stocks, favourites }) => {
+  return stocks.map(({ data }, index) => {
     return (
       <Box
         sx={{
@@ -11,16 +11,17 @@ export const StockPrices = ({ stocks, favourites, setStocks }) => {
           m: 3,
           bgcolor: "#ffffff",
         }}
+        key={index}
       >
         <Box sx={{ display: "flex", alignItems: "center" }}>
-          {stock.name.favourite}
+          {favourites[index]}
         </Box>
         <Box sx={{ display: "flex", flexDirection: "column" }}>
-          <div>high: {stock.h} </div>
-          <div>low :{stock.l} </div>
-          <div>open: {stock.o} </div>
-          <div>close: {stock.c}</div>
-          <div>% change: {stock.pc} %</div>
+          <div>high: {data.h} </div>
+          <div>low :{data.l} </div>
+          <div>open: {data.o} </div>
+          <div>close: {data.c}</div>
+          <div>% change: {data.pc} %</div>
         </Box>
       </Box>
     );
