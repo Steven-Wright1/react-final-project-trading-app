@@ -1,15 +1,13 @@
-import { React, useEffect, useState } from "react";
+import { React, useState, useEffect } from "react";
 import { StockPrices } from "../components/StockPrices";
 import Container from "@mui/material/Container";
 import { getFromLocalStorage } from "../utils/getFromLocalStorage";
 import axios from "axios";
 
 export const PricePoints = () => {
-  const [favourites, setFavourites] = useState(
-    getFromLocalStorage("favourites", [])
-  );
+  const favourites = getFromLocalStorage("favourites", []);
+  const [stocks, setStocks] = useState([]);
 
-  const stocks = [];
   const api_key = process.env.REACT_APP_API_KEY;
 
   useEffect(() => {
@@ -20,10 +18,10 @@ export const PricePoints = () => {
         )
         .then((response) => {
           const data = response.data;
+          data.name = { favourite };
           stocks.push(data);
-          return stocks;
         });
-      return stocks;
+      return setStocks(stocks);
     });
     console.log(stocks);
   });
@@ -31,7 +29,11 @@ export const PricePoints = () => {
   return (
     <Container>
       <div>PricePoints</div>
-      <StockPrices favourites={favourites} />
+      <StockPrices
+        stocks={stocks}
+        setStocks={setStocks}
+        favourites={favourites}
+      />
     </Container>
   );
 };

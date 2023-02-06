@@ -1,19 +1,28 @@
 import Box from "@mui/material/Box";
-import Stack from "@mui/material/Stack";
-import axios from "axios";
-import { useEffect } from "react";
+import { React } from "react";
 
-export const StockPrices = ({}) => {
-  return (
-    <Box sx={{ display: "flex", justifyContent: "space-around", m: 3 }}>
-      <Box sx={{ display: "flex", alignItems: "center" }}></Box>
-      <Box sx={{ display: "flex", flexDirection: "column" }}>
-        <div>high: 261 </div>
-        <div>low :245</div>
-        <div>open: 250</div>
-        <div>close:258</div>
-        <div>% change: 3.5%</div>
+export const StockPrices = ({ stocks, favourites, setStocks }) => {
+  return stocks.map((stock) => {
+    return (
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "space-around",
+          m: 3,
+          bgcolor: "#ffffff",
+        }}
+      >
+        <Box sx={{ display: "flex", alignItems: "center" }}>
+          {stock.name.favourite}
+        </Box>
+        <Box sx={{ display: "flex", flexDirection: "column" }}>
+          <div>high: {stock.h} </div>
+          <div>low :{stock.l} </div>
+          <div>open: {stock.o} </div>
+          <div>close: {stock.c}</div>
+          <div>% change: {stock.pc} %</div>
+        </Box>
       </Box>
-    </Box>
-  );
+    );
+  });
 };

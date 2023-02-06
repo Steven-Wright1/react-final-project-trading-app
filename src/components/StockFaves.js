@@ -2,7 +2,7 @@ import React from "react";
 import Box from "@mui/material/Box";
 import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
 import { getFromLocalStorage } from "../utils/getFromLocalStorage";
-import TrendingUpIcon from "@mui/icons-material/TrendingUp";
+/*import TrendingUpIcon from "@mui/icons-material/TrendingUp";*/
 /*import LozArrow from "../Images/loz.PNG";*/
 
 export const StockFaves = ({ favourites, setFavourites }) => {
@@ -25,12 +25,9 @@ export const StockFaves = ({ favourites, setFavourites }) => {
           bgcolor: "#ffffff",
           borderRadius: 5,
           fontSize: "2rem",
-          justifyContent: "space-around",
+          justifyContent: "space-between",
         }}
       >
-        <Box sx={{ display: "flex", alignItems: "center" }}>
-          <TrendingUpIcon sx={{ fontSize: 30 }} />
-        </Box>
         <Box sx={{ fontWeight: "bold" }}>{favourite}</Box>
         <Box sx={{ display: "flex", alignItems: "center" }}>
           <RemoveCircleOutlineIcon
