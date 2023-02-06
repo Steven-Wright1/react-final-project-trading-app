@@ -3,12 +3,10 @@ import { AppRoutes } from "./AppRoutes";
 import { BrowserRouter } from "react-router-dom";
 
 export const App = () => {
-    return(
-
-        <BrowserRouter>
-            <NavigationBar />
-            <AppRoutes />
-        </BrowserRouter>
-
-    );
-}
+  return (
+    <BrowserRouter>
+      <NavigationBar />
+      <AppRoutes />
+    </BrowserRouter>
+  );
+};

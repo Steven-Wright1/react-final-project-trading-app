@@ -17,12 +17,9 @@ export const PricePoints = () => {
           `https://finnhub.io/api/v1/quote?symbol=${favourite}&token=${api_key}`
         );
       });
-
       const data = await Promise.all(promises);
-
       setStocks(data);
     };
-
     fetchData();
   }, []);
 
@@ -30,7 +27,7 @@ export const PricePoints = () => {
 
   return (
     <Container>
-      <div>PricePoints</div>
+      <h1 className="price-points-header">Price Points</h1>
       {stocks.length !== 0 && (
         <StockPrices stocks={stocks} favourites={favourites} />
       )}

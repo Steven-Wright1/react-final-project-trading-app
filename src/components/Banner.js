@@ -1,5 +1,5 @@
 import HeaderPhoto from "../images/HeaderPhoto.jpg";
-import { Container } from "react-bootstrap";
+import Container from "@mui/material/Container";
 
 export const Banner = () => {
   return (

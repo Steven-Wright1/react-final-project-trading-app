@@ -20,8 +20,9 @@ export const StockFaves = ({ favourites, setFavourites }) => {
       <Box
         sx={{
           display: "flex",
-          m: 1,
-          p: 1,
+          mt: 3,
+          mb: 3,
+          p: 2,
           bgcolor: "#ffffff",
           borderRadius: 5,
           fontSize: "2rem",

@@ -20,14 +20,17 @@ export const SearchForm = ({ setFavourites, setErrorMessage }) => {
   const onSubmit = ({ ticker }) => {
     const favouritesFromLS = getFromLocalStorage("favourites", []);
 
-    if (favouritesFromLS.length < 5) {
+    if (
+      favouritesFromLS.length < 5 &&
+      favouritesFromLS.includes(ticker) === false
+    ) {
       favouritesFromLS.push(ticker);
-
       localStorage.setItem("favourites", JSON.stringify(favouritesFromLS));
-
       setFavourites(favouritesFromLS);
+    } else if (favouritesFromLS.includes(ticker) === true) {
+      setErrorMessage("Please ensure the stock symbol is unique");
     } else {
-      setErrorMessage("5 is max");
+      setErrorMessage("5 is the maximum");
     }
   };
 
