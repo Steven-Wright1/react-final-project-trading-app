@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
 import { getFromLocalStorage } from "../utils/getFromLocalStorage";
 /*import TrendingUpIcon from "@mui/icons-material/TrendingUp";*/
-/*import LozArrow from "../Images/loz.PNG";*/
+/*import LozArrow from "../images/loz.PNG";*/
 
 export const StockFaves = ({ favourites, setFavourites }) => {
   const handleRemove = (event) => {
