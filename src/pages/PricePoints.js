@@ -8,8 +8,7 @@ export const PricePoints = () => {
   const favourites = getFromLocalStorage("favourites", []);
   const [stocks, setStocks] = useState([]);
 
-  const api_key = process.env.REACT_APP_API_KEY;
-
+  const api_key = process.env.REACT_APP_API_KEY_FINN;
   useEffect(() => {
     const fetchData = async () => {
       const promises = favourites.map((favourite) => {

@@ -53,3 +53,8 @@ body {
   color: white;
   padding: 25px;
 }
+
+.submit-btn {
+  color: pink;
+  background-color: "#4CAF50";
+}

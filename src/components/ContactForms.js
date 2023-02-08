@@ -70,6 +70,7 @@ export const ContactForm = () => {
     };
 
     setQuery(query);
+    formik.resetForm();
   };
 
   const formik = useFormik({
@@ -179,7 +180,7 @@ export const ContactForm = () => {
             inputProps={{ maxLength: 250 }}
           />
 
-          <Button color="primary" variant="contained" type="submit">
+          <Button color="warning" variant="contained" type="submit">
             Submit
           </Button>
         </Stack>
